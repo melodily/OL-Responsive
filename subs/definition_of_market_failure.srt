@@ -1,0 +1,65 @@
+1
+00:00:01,000 --> 00:00:03,298
+Hi my name is Penghui and today I'll talk about Market Failure.
+
+2
+00:00:04,053 --> 00:00:06,000
+So let's start with the definition of Market Failure.
+
+
+3
+00:00:09,382 --> 00:00:10,180
+It is the situation that happens when 
+
+4
+00:00:10,181 --> 00:00:14,054
+the allocation of goods and services by the free market is inefficient.
+
+5
+00:00:15,056 --> 00:00:17,330
+This means that benefits are not maximized 
+
+6
+00:00:17,705 --> 00:00:21,088
+based on the combination of goods and services that are currently in place.
+
+7
+00:00:21,784 --> 00:00:23,092
+So this implies that there can be 
+
+8
+00:00:23,652 --> 00:00:25,786
+a better combination of goods and services such that 
+
+9
+00:00:26,158 --> 00:00:28,180
+the benefits are actually maximized for the market. 
+
+10
+00:00:28,922 --> 00:00:32,875
+So there are a couple of different types of market failure.
+
+11
+00:00:33,431 --> 00:00:38,179
+Basically imperfect competition which are your monopolies, oligopolies and so on.
+
+12
+00:00:38,868 --> 00:00:42,471
+Externalities which are your positive and negative externalities.
+
+13
+00:00:42,918 --> 00:00:43,643
+and lastly public goods.
+
+14
+00:00:44,838 --> 00:00:46,868
+So there are actually two more kinds of market failure 
+
+15
+00:00:47,015 --> 00:00:49,455
+but I won't go into it because they're not in the H2 syllabus.
+
+16
+00:00:49,933 --> 00:00:53,088
+That is information asymmetry and the bounded rationality theorem. 
+

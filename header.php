@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/skeleton.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/boilerplate.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/sausage.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/backtotop.css">
 
   <!-- Scripts
@@ -29,10 +28,15 @@
   wp_enqueue_script('modernizr', '/wp-content/themes/olresponsive/js/modernizr-2.0.6.min.js', false, null);
   wp_enqueue_script('respond', '/wp-content/themes/olresponsive/js/respond.min.js', false, null);
   wp_enqueue_script('jwplayer', '/wp-content/themes/olresponsive/jwplayer/jwplayer.js', false, null);
-  wp_enqueue_script('jwidget', '/wp-content/themes/olresponsive/js/jquery.ui.widget.js', false, null);
   wp_enqueue_script('backtotop', '/wp-content/themes/olresponsive/js/backtotop.js', false, null);
+  if (is_page('terms')) {
   wp_enqueue_script('tabs', '/wp-content/themes/olresponsive/js/tabs.js', false, null);
+  }
+  if (is_page('about-us')) {
   wp_enqueue_script('extremes', '/wp-content/themes/olresponsive/js/extremes.js', false, null);
+  }
+  wp_enqueue_script('footer', '/wp-content/themes/olresponsive/js/footer.js', false, null);
+  // wp_enqueue_script('sticky', '/wp-content/themes/olresponsive/js/jquery.sticky.js', false, null);
   }
   add_action('wp_enqueue_scripts', 'call_scripts');
   ?>

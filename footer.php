@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="footer">
 <hr class="half-bottom">
     <div class="row">
       <div class="twelve columns alpha">

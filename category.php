@@ -17,7 +17,7 @@
         }
         for ($q=0; $q<$catcount; $q++) {
             echo '<div class="one-third column alpha">';
-            echo '<h2 class="subheader">'.get_the_category_by_ID($subcat_ID[$q]).'</h2>';
+            echo '<h2 class="subheader category">'.get_the_category_by_ID($subcat_ID[$q]).'</h2>';
             echo '</div><!--1/3col-->';
             echo '<div class="two-thirds column omega">';
             for ($n=0; $n<$topiccount[$q]; $n++) {
@@ -36,5 +36,10 @@
     <p id="back-top">
         <a href="#top"><span></span>Back to Top</a>
     </p>
+    <script>
+    // jQuery(document).ready(function(){
+    //     jQuery(".category").sticky({topSpacing:5});
+  // });
+    </script>
 </div><!--container-->
 <?php get_footer(); ?>

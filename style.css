@@ -79,6 +79,9 @@ Version: 1.0
 		-webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
 		-webkit-text-size-adjust: 100%;
 	}
+	#footer {
+		height:170px;
+	}
 
 /* #Typography
 ================================================== */
@@ -100,8 +103,8 @@ Version: 1.0
 
 	p { margin: 0 0 20px 0; }
 	p img { margin: 0; }
-	p.lead { font-size: 21px; line-height: 27px; }
-	p.medium { font-size: 18px; line-height: 24px; }
+	.lead { font-size: 21px; line-height: 27px; }
+	.medium { font-size: 18px; line-height: 24px; }
 	.disabled {color: #808080;}
 
 	i,em { font-style: italic; }
@@ -121,6 +124,7 @@ Version: 1.0
 	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
 
 	hr { border: solid #404040; border-width: 1.5px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+	hr.subheader {border: solid #33CCCC; border-width: 1.5px;}
 
 
 /* #Links
@@ -174,6 +178,14 @@ Version: 1.0
 	.round-bot {
 		-moz-border-radius: 0 0 5px 5px;
 		border-radius: 0 0 5px 5px;
+	}
+	.floatleft {
+		float:left;
+		margin: 5px;
+	}
+	.floatright {
+		float:right;
+		margin: 5px;
 	}
 
 /* #Videos 

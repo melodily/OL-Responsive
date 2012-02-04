@@ -19,12 +19,14 @@
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/skeleton.css">
   <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/boilerplate.css">
+  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/sticky.full.css"> 
 
   <!-- Scripts
   ================================================== -->
   <?php function call_scripts() {  
   wp_enqueue_script('modernizr', '/wp-content/themes/olresponsive/js/modernizr-2.0.6.min.js', false, null);
   wp_enqueue_script('respond', '/wp-content/themes/olresponsive/js/respond.min.js', false, null);
+  wp_enqueue_script('sticky','/wp-content/themes/olresponsive/js/sticky.full.js', false, null);
   }
   add_action('wp_enqueue_scripts', 'call_scripts');
   ?>
@@ -70,7 +72,7 @@
 </div><!--graybox-->
 <div class="tealbox aligncenter round-bot">
 <h1>6 Feb</h1>
-<p class="medium">Chemistry, Introductory Topics, Stoichiometry</p>
+<p class="medium">Chemistry, Introductory Topics</p>
 </div><!--tealbox-->
 </div><!--2/3col-->
 <div class="twelve columns omega">
@@ -78,14 +80,20 @@
 
 <p>We're doing it for free, because education should never be limited by your ability to afford it. And we're not giving you any slipshod work - all our work is carefully designed to let you gain the best you can from it!</p>
 
-<p class="lead subheader">So sit back, relax and start learning.</h4>
+<p class="lead subheader">So sit back, relax and start learning.</p>
 </div><!--1/3col-->
-</div><!--container-->
+</div><!--row-->
 </div><!--container-->
 <!--[if lt IE 7 ]>
   <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
   <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
 <![endif]-->
+<script>
+jQuery(document).ready(function()
+  {
+    jQuery.sticky('<p class="remove-bottom"><b>04 Feb</b> - Stoichiometry lectures are now available! View them <a href="/chemistry">here</a>!</p>');
+  });
+</script> 
 </body>
 <?php get_footer(); ?>
 </html>

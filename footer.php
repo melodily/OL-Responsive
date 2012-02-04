@@ -19,7 +19,7 @@
       		<li><a href="/about-us">About <span class="openlectures"><b>open</b>lectures</span></a></li>
       		<li class="hidden">The Team</li>
       		<li class="hidden">Opportunities</li>
-      		<li class="hidden">Press Center</li>
+      		<li><a href="/press">Press Center</li>
       		<li><a href="/terms">Terms</a></li>
       	</ul>
       	</div><!--3col-->

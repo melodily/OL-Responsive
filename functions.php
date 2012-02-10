@@ -1,4 +1,45 @@
 <?php
+
+// Remove menus from WP Dashboard
+function remove_menus () {
+global $menu;
+    $restricted = array(__('Dashboard'), __('Links'), __('Comments'));
+    end ($menu);
+    while (prev($menu)){
+        $value = explode(' ',$menu[key($menu)][0]);
+        if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
+    }
+}
+add_action('admin_menu', 'remove_menus');
+// End remove menus
+
+// GravityForms "Display All Posts" Dropdown Add-in
+// update the '51' to the ID of your form
+add_filter('gform_pre_render_3', 'populate_posts');
+
+function populate_posts($form){
+    
+    foreach($form['fields'] as &$field){
+        
+        if($field['type'] != 'select' || strpos($field['cssClass'], 'populate-posts') === false)
+            continue;
+
+        $posts = get_posts('numberposts=-1&post_status=publish');
+
+        $choices = array(array('text' => 'Type to search', 'value' => ' '));
+        
+        foreach($posts as $post){
+            $choices[] = array('text' => $post->post_title, 'value' => $post->post_title);
+        }
+        
+        $field['choices'] = $choices;
+        
+    }
+    
+    return $form;
+}
+// End GravityForms Add-in
+
 // Finds Top Level Parent
 function pa_category_top_parent_id ($catid) {
  while ($catid) {

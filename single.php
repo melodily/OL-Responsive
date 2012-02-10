@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+<style>
+    #container_wrapper {margin:0 auto;}
+</style>
   <div class="container header">
         <div class="two columns">
         <br />
@@ -45,7 +48,7 @@
               'plugins': {
                 'hd-2': {'state': 'true'},
             	  'backstroke-1' : {},
-                'captions-2': {file:''},
+                // 'captions-2': {file:''},
                 'lightsout-1': {}
       	      },
               'controlbar': 'bottom',
@@ -53,7 +56,7 @@
           	'file': '/wp-content/uploads/Logo-Player.png',
           	'position': 'top-left',
             },
-            'skin': '/wp-content/themes/olcustom/jwplayer/schoon.zip'
+            'skin': '/wp-content/themes/olresponsive/jwplayer/schoon.zip'
             });
           </script>
           </div><!--video-->

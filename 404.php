@@ -7,77 +7,37 @@
 </div><!--header-->
 <hr>
 <div class="row">
-	<div class="span-one-third">
-		<div class="well" style="text-align:center;">
+	<div class="one-third column alpha aligncenter">
 			<h1 style="font-size:400%;">A</h2>
 			<h3>Return</h3>
 			<hr>
-			<a href="javascript:history.back()"><span>
+			<a href="javascript:history.back()" class="email"><span>
 			<h1 style="font-size:400%;">&larr;</h1>
 			<span>
-			<p>Go back to the previous page you were on</p>
+			<p class="medium">Go back to the previous page</p>
 			</span></a>
 			<h2>or</h2>
-			<a href=<?php bloginfo('url'); ?>><span>
+			<a href=<?php bloginfo('url'); ?> class="email"><span>
 			<h1 style="font-size:400%;">&uarr;</h1>
-			<p>Start over from the beginning</p>
+			<p class="medium">Start over from the beginning</p>
 			</span></a>
-		</div><!--well-->
-	</div><!--span-one-third-->
-	<div class="span-one-third">
-		<div class="well" style="text-align:center;">
+	</div><!--1/3col-->
+	<div class="one-third column aligncenter">
 		<h1 style="font-size:400%;">B</h2>
 		<h3>Explore</h3>
 		<hr>
-		<p>Choose a subject. Any subject.</p>
-		<div class="row" style="margin-left:inherit;">
-		<div class="span2">
-			<a href="/biology"><span>
-			<h1 style="font-size:350%;">b</h1>
-			<p>biology</p></span></a>
-		</div><!--span2-->
-		<div class="span2">
-			<a href="/chemistry"><span>
-			<h1 style="font-size:350%;">c</h1>
-			<p>chemistry</p></span></a>
-		</div><!--span2-->
-		</div><!--subset-row-->
-		<div class="row" style="margin-left:inherit;">
-		<div class="span2">
-			<a href="/economics"><span>
-			<h1 style="font-size:350%;">e</h1>
-			<p>economics</p></span></a>
-		</div><!--span2-->
-		<div class="span2">
-			<a href="/mathematics"><span>
-			<h1 style="font-size:350%;">m</h1>
-			<p>mathematics</p></span></a>
-		</div><!--span2-->
-		</div><!--subset-row-->
-		<div class="row" style="margin-left:inherit;">
-		<div class="span2">
-			<a href="/physics"><span>
-			<h1 style="font-size:350%;">p</h1>
-			<p>physics</p></span></a>
-		</div><!--span2-->
-		<div class="span2">
-			<a href="/subjects"><span>
-			<h1 style="font-size:350%;">( )</h1>
-			<p>all subjects</p></span></a>
-		</div><!--span2-->
-		</div><!--subset-row-->
-		</div><!--well-->
-	</div><!--span-one-third-->
-	<div class="span-one-third" style="text-align:center;">
-		<div class="well">
-			<h1 style="font-size:400%;">C</h2>
-			<h3>Battle</h3>
-			<hr>
-			<p>Think there should be something here? Drop us a message at</p>
-<p><a href="mailto:hello@openlectures.sg">hello@openlectures.sg</a></p>
-<p>and we'll get down to it.</p>
-			<p>If you'd like us to keep you updated, include your email address.</p> 
-		</div><!--well-->
-	</div><!--span-one-third-->
+		<p class="medium">Choose a subject. Any subject.</p>
+		<p class="medium"><a href="/subjects/economics">Economics</a></p>
+		<p class="medium"><a href="/subjects/chemistry">Chemistry</a></p>
+	</div><!--1/3col-->
+	<div class="one-third column omega aligncenter">
+		<h1 style="font-size:400%;">C</h2>
+		<h3>Battle</h3>
+		<hr>
+		<p class="medium">Think there should be something here? Drop us a message at</p>
+		<p class="medium"><a href="mailto:hello@openlectures.sg" class="email"><span class="subheader">hello</span>@openlectures.sg</a></p>
+		<p class="medium">and we'll get down to it.</p>
+		<p class="medium">If you'd like us to keep you updated, include your email address.</p> 
+	</div><!--1/3col-->
 </div><!--row-->
 <?php get_footer(); ?>

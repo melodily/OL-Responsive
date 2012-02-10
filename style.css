@@ -152,6 +152,7 @@ Version: 1.0
 	ul.squeeze li { line-height:14px; }
 	ul.squeeze { padding: 0 0 0 10px; }
 	li p { line-height: 21px; }
+	li.gfield {margin:0;}
 
 /* #Images
 ================================================== */
@@ -195,7 +196,6 @@ Version: 1.0
 		height: auto;
 	}
 	.video { margin-bottom:10px;}
-	#container_wrapper {margin:0 auto;}
 
 /* #Buttons
 ================================================== */
@@ -215,7 +215,7 @@ Version: 1.0
 	  border: 1px solid #aaa;
 	  border-top: 1px solid #ccc;
 	  border-left: 1px solid #ccc;
-	  padding: 4px 12px;
+	  padding: 10px 12px;
 	  -moz-border-radius: 3px;
 	  -webkit-border-radius: 3px;
 	  border-radius: 3px;
@@ -228,7 +228,12 @@ Version: 1.0
 	  cursor: pointer;
 	  margin-bottom: 20px;
 	  line-height: 21px;
-	  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+	  /*font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+	  width:100%;
+	  padding-left: 0 !important;
+	  padding-right: 0 !important;
+	  text-align: center;
+	}
 
 	a.button:hover,
 	button:hover,
@@ -348,27 +353,31 @@ Version: 1.0
 ================================================== */
 
 	form {
-		margin-bottom: 20px; }
+		/*margin-bottom: 20px; */
+	}
 	fieldset {
-		margin-bottom: 20px; }
+		/*margin-bottom: 20px; */
+	}
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
 	textarea,
 	select {
+		box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    -webkit-box-sizing: border-box;
 		border: 1px solid #ccc;
 		padding: 6px 4px;
 		outline: none;
 		-moz-border-radius: 2px;
 		-webkit-border-radius: 2px;
 		border-radius: 2px;
-		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-family:inherit;		
 		color: #777;
 		margin: 0;
-		width: 210px;
+		width: auto;
 		max-width: 100%;
 		display: block;
-		margin-bottom: 20px;
 		background: #fff; }
 	select {
 		padding: 0; }
@@ -388,8 +397,6 @@ Version: 1.0
 		display: block;
 		font-weight: bold;
 		font-size: 13px;  }
-	select {
-		width: 220px; }
 	input[type="checkbox"] {
 		display: inline; }
 	label span,
@@ -397,6 +404,9 @@ Version: 1.0
 		font-weight: normal;
 		font-size: 13px;
 		color: #444; }
+	form>.top_label,form>.gform_footer,input>.gform_button {
+		margin: 0;
+	} 
 
 /* #Misc
 ================================================== */

@@ -8,7 +8,7 @@
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
-  <title><?php bloginfo('name'); ?> <?php wp_title('-'); ?></title>
+  <title>Open Lectures <?php wp_title('-'); ?></title>
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -16,27 +16,33 @@
 
   <!-- CSS
   ================================================== -->
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/skeleton.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/boilerplate.css">
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/backtotop.css">
+  <link rel="stylesheet" href="/wp-content/themes/olresponsive/style.css">
+  <link rel="stylesheet" href="/wp-content/themes/olresponsive/skeleton.css">
+  <link rel="stylesheet" href="/wp-content/themes/olresponsive/boilerplate.css">
+  <link rel="stylesheet" href="/wp-content/themes/olresponsive/backtotop.css">
+  <link rel="stylesheet" href="/wp-content/themes/olresponsive/timeline.css">
+  <link rel="stylesheet" href="/wp-content/themes/olresponsive/bootstrap.css">
 
   <!-- Scripts
   ================================================== -->
   <?php function call_scripts() {
   wp_enqueue_script('jquery');  
-  wp_enqueue_script('modernizr', '/wp-content/themes/olresponsive/js/modernizr-2.0.6.min.js', false, null);
-  wp_enqueue_script('respond', '/wp-content/themes/olresponsive/js/respond.min.js', false, null);
-  wp_enqueue_script('jwplayer', '/wp-content/themes/olresponsive/jwplayer/jwplayer.js', false, null);
-  wp_enqueue_script('backtotop', '/wp-content/themes/olresponsive/js/backtotop.js', false, null);
-  if (is_page('terms')) {
-  wp_enqueue_script('tabs', '/wp-content/themes/olresponsive/js/tabs.js', false, null);
+  wp_enqueue_script('modernizr', '/wp-content/themes/olresponsive/js/modernizr-2.0.6.min.js', array(), null, true);
+  wp_enqueue_script('respond', '/wp-content/themes/olresponsive/js/respond.min.js', array(), null, true);
+  wp_enqueue_script('bootstrap', '/wp-content/themes/olresponsive/js/bootstrap.min.js', array('jquery'), null, true);
+  if (is_single() || is_home()) {
+  wp_enqueue_script('jwplayer', '/wp-content/themes/olresponsive/jwplayer/jwplayer.js', array('jquery'), null, false);
+  }
+  wp_enqueue_script('backtotop', '/wp-content/themes/olresponsive/js/backtotop.js', array(), null, true);
+  if (is_page(array('terms','press'))) {
+  wp_enqueue_script('tabs', '/wp-content/themes/olresponsive/js/tabs.js', array(), null, true);
+  }
+  if (is_page('press')) {
+  wp_enqueue_script('timeline', '/wp-content/themes/olresponsive/js/timeline.js', array('jquery'), null, true);
   }
   if (is_page('about-us')) {
-  wp_enqueue_script('extremes', '/wp-content/themes/olresponsive/js/extremes.js', false, null);
+  wp_enqueue_script('extremes', '/wp-content/themes/olresponsive/js/extremes.js', array('jquery'), null, true);
   }
-  wp_enqueue_script('footer', '/wp-content/themes/olresponsive/js/footer.js', false, null);
-  // wp_enqueue_script('sticky', '/wp-content/themes/olresponsive/js/jquery.sticky.js', false, null);
   }
   add_action('wp_enqueue_scripts', 'call_scripts');
   ?>

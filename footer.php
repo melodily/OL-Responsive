@@ -6,9 +6,9 @@
       	<div class="three columns alpha">
       	<b>Content</b>
       	<ul class="squeeze">
-      		<li class="hidden">Mathematics</li>
       		<li><a href="/subjects/economics">Economics</a></li>
       		<li><a href="/subjects/chemistry">Chemistry</a></li>
+                  <li class="hidden">Mathematics</li>
       		<li class="hidden">Physics</li>
       		<li class="hidden">Biology</li>
       	</ul>
@@ -26,8 +26,8 @@
       	<div class="three columns">
       	<b>Support</b>
       	<ul class="squeeze">
-      		<li class="hidden">Feedback</li>
-      		<li class="hidden">Report Content</li>
+      		<li><a href="/feedback">Feedback</a></li>
+      		<li><a href="/errors">Report Errors</a></li>
       		<li><a href="/contact-us">Contact Us</a></li>
       		<li class="hidden">FAQ</li>
       	</ul>
@@ -45,7 +45,7 @@
       </div><!--row-->
     </div><!--12col-->
     <div class="four columns omega">
-          <a href="http://openlectures.sg"><img src="/wp-content/uploads/Logo-Twitter.png" width="100px"></a>
+          <a href="http://openlectures.sg"><img src="/wp-content/themes/olresponsive/img/Logo-Square-Small.png" width="100px"></a>
           <p><span class="openlectures"><b>open</b>lectures</span> is designed and built in Singapore. All footage is licensed under <a href="http://creativecommons.org/licenses/by-nd/3.0/">CC BY-ND 3.0</a> unless otherwise noted.</p>
     </div><!--4col-->
 </div><!--container/footer-->

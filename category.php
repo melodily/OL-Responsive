@@ -1,8 +1,9 @@
 <?php get_header(); ?>
-<div class="container header" id="top">
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+<div class="container" id="top">
+    <div class="page-header">
     <h1><?php single_cat_title(); ?></h1>
-    <hr>
-    <div class="rows">
+    </div>
     <?php
         $subject = get_category($cat);
         $subcats = objectToArray(get_categories('parent='.$subject->cat_ID));
@@ -15,31 +16,44 @@
                 $topics_ID[$i][$k]=$topics[$i][$k][cat_ID];
             }
         }
+        echo '<div class="subnav">';
+        echo '<ul class="nav nav-pills">';
         for ($q=0; $q<$catcount; $q++) {
-            echo '<div class="one-third column alpha">';
-            echo '<h2 class="subheader category">'.get_the_category_by_ID($subcat_ID[$q]).'</h2>';
-            echo '</div><!--1/3col-->';
-            echo '<div class="two-thirds column omega">';
+            echo '<li class="dropdown">';
+            echo '<a class="dropdown-toggle" data-toggle="dropdown" href="#">'.get_the_category_by_ID($subcat_ID[$q]).'<b class="caret"></b></a>';
+            echo '<ul class="dropdown-menu">';
             for ($n=0; $n<$topiccount[$q]; $n++) {
+               echo '<li><a href="#'.$topics_ID[$q][$n].'">'.get_the_category_by_ID($topics_ID[$q][$n]).'</a></li>';
+            }
+            echo '</ul>';
+            echo '</li>';
+        }
+        echo '</ul><!--navpills-->';
+        echo '</div><!--subnav-->';
+        echo '<div class="row">';
+        for ($q=0; $q<$catcount; $q++) {
+            echo '<div class="span4">';
+            echo '<h2 class="subheader">'.get_the_category_by_ID($subcat_ID[$q]).'</h2>';
+            echo '</div><!--4col-->';
+            echo '<div class="span8">';
+            for ($n=0; $n<$topiccount[$q]; $n++) {
+                echo '<section id="'.$topics_ID[$q][$n].'">';
                 echo '<h3>'.get_the_category_by_ID($topics_ID[$q][$n]).'</h3>';
-                echo '<ul>';
+                echo '<ul class="nav nav-list">';
                     foreach (get_posts('cat='.$topics_ID[$q][$n].'&posts_per_page=30&order=ASC&orderby=title') as $post) {
                         setup_postdata( $post );
                         echo '<li><a href="'.get_permalink($post->ID).'">'.get_the_title().'</a></li>';   
                     }
                 echo '</ul>';
+                echo '</section>';
             }
-            echo '</div><!--2/3col-->';
+            echo '</div><!--8col-->';
         }
+        echo '</div><!--row-->';
     ?>
-    </div><!--rows-->
-    <p id="back-top">
+    <!-- <p id="back-top">
         <a href="#top"><span></span>Back to Top</a>
-    </p>
-    <script>
-    // jQuery(document).ready(function(){
-    //     jQuery(".category").sticky({topSpacing:5});
-  // });
-    </script>
+    </p> -->
 </div><!--container-->
+</body>
 <?php get_footer(); ?>

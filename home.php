@@ -1,41 +1,35 @@
 <?php get_header(); ?>
 <body>
 <div class="container">
-<div class="tealbox round-top round-bot">
-<p class="lead aligncenter">New stuff lands on 12 Feb! Chemistry > Introductory Topics > States of Matter</p>
-</div><!--tealbox-->
-</div><!--container-->
-<div class="container header">
-<h2 class="add-half-top">What did you <span class="subheader">learn</span> today? Choose a subject:</h2>
+<?php echo do_shortcode('[sp-twitter users=27 count=1 displayFormat=div]')?>
+<h1>What did you <span class="subheader">learn</span> today? Choose a subject:</h1>
 <div class="row">
-<div class="subject columns aligncenter alpha">
-<a href="/subjects/economics" class="email"><span>
+<div class="span2">
+<a href="/subjects/economics"><span>
 <img src="/wp-content/themes/olresponsive/img/econs.png">
 <h2>Econs</h2>
 </span></a>
 </div><!--3col-->
-<div class="subject columns aligncenter">
-<a href="/subjects/chemistry" class="email"><span>
+<div class="span2">
+<a href="/subjects/chemistry"><span>
 <img src="/wp-content/themes/olresponsive/img/chem.png">
 <h2>Chem</h2>
 </span></a>
-</div><!--3col-->
-<div class="subject columns aligncenter">
-<img src="/wp-content/themes/olresponsive/img/math.png" class="disabled">
+</div><!--2col-->
+<div class="span2">
+<img src="/wp-content/themes/olresponsive/img/math.png" class="muted">
 <h2 class="disabled">Math</h2>
-</div><!--3col-->
-<div class="subject columns aligncenter">
-<img src="/wp-content/themes/olresponsive/img/physics.png" class="disabled">
+</div><!--2col-->
+<div class="span2">
+<img src="/wp-content/themes/olresponsive/img/physics.png" class="muted">
 <h2 class="disabled">Physics</h2>
-</div><!--3col-->
-<div class="subject columns aligncenter omega">
-<img src="/wp-content/themes/olresponsive/img/bio.png" class="disabled">
+</div><!--2col-->
+<div class="span2">
+<img src="/wp-content/themes/olresponsive/img/bio.png" class="muted">
 <h2 class="disabled">Bio</h2>
-</div><!--3col-->
-</div><!--row-->
-<div class="row">
-<div class="two-thirds column alpha">
-<div id="container">
+</div><!--2col-->
+<div class="span8">
+<div class="video" id="container">
   <script type='text/javascript'>
     jwplayer('container').setup({
       'flashplayer': '/wp-content/themes/olresponsive/jwplayer/player.swf',
@@ -80,11 +74,11 @@
     'skin': '/wp-content/themes/olresponsive/jwplayer/schoon.zip'
     });
   </script>
-  </div>
-</div><!--2/3col-->
-<div class="one-third column omega">
-<h1><a href="/about-us"><span class="subheader">What are we?</span></a> Free education. That's what we are. Watch a video, and hear it from our lecturers.</h1>
-</div><!--1/3col-->
+  </div><!--video-->
+</div><!--8col-->
+<div class="span4">
+  <h1><a href="/about-us"><span class="subheader">What are we?</span></a> Free education. That's what we are. Watch a video, and hear it from our lecturers.</h1>
+</div><!--4col-->
 </div><!--row-->
 </div><!--container-->
 <!--[if lt IE 7 ]>

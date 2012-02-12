@@ -1,4 +1,4 @@
-body { padding-top:50px; }
+body { padding-top:40px; }
 @font-face { 
 	font-family: 'geosans_light'; 
 	src: url('/wp-content/themes/olresponsive/font/geosans_light.eot'); 
@@ -22,7 +22,14 @@ body { padding-top:50px; }
 .aligncenter { text-align:center; }
 .alignjustify { text-align:justify; }
 .rot { display:block; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
-
+.tweet {
+  text-align: center;
+  background-color:#33CCCC;
+  padding:5px 10px;
+  border-radius: 0 0 20px 20px;
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+}
 /* Subnav */
 .subnav {
   width: 100%;

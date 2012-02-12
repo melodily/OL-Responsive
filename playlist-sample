@@ -1,0 +1,46 @@
+<div class="video" id="container">
+  <script type='text/javascript'>
+    jwplayer('container').setup({
+      'flashplayer': '/wp-content/themes/olresponsive/jwplayer/player.swf',
+      'playlist': [{
+        'file': 'http://www.youtube.com/watch?v=nY7c1v93aVk',
+        'provider': 'youtube',
+        'image': '/wp-content/uploads/Ending-Wrapper.png'
+      },{ 
+        'file': 'http://www.youtube.com/watch?v=P7_9sD2jZtE', 
+        'provider': 'youtube',
+        'image': '/wp-content/uploads/Ending-Wrapper.png'
+      },{ 
+        'file': 'http://www.youtube.com/watch?v=N6cRTr2FFew', 
+        'provider': 'youtube',
+        'image': '/wp-content/uploads/Ending-Wrapper.png'
+      },{ 
+        'file': 'http://www.youtube.com/watch?v=of2QpN2KjIM', 
+        'provider': 'youtube',
+        'image': '/wp-content/uploads/Ending-Wrapper.png'
+      },{ 
+        'file': 'http://www.youtube.com/watch?v=T7S1qzQj4rc', 
+        'provider': 'youtube',
+        'image': '/wp-content/uploads/Ending-Wrapper.png'
+      },{ 
+        'file': 'http://www.youtube.com/watch?v=JUUMtg2N3fw', 
+        'provider': 'youtube',
+        'image': '/wp-content/uploads/Ending-Wrapper.png'
+      }],
+      'repeat': 'always',
+      'shuffle': 'true',
+      'width': '620',
+      'height': '392',
+      'plugins': {
+        'hd-2': {'state': 'true'},
+        // 'captions-2': {file:''}
+      },
+      'controlbar': 'bottom',
+      'logo': {
+        'file': '/wp-content/uploads/Logo-Player.png',
+        'position': 'top-left',
+      },
+    'skin': '/wp-content/themes/olresponsive/jwplayer/schoon.zip'
+    });
+  </script>
+  </div><!--video-->

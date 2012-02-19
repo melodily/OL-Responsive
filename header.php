@@ -29,7 +29,7 @@
   wp_enqueue_script('bootstrap', '/wp-content/themes/olresponsive/js/bootstrap.min.js', array('jquery'), null, true);
   // wp_enqueue_script('opacity', '/wp-content/themes/olresponsive/js/opacity.js', array('jquery'), null, true);
   // Conditional loading
-  if (is_category()) {
+  if (is_category() || is_page('team')) {
   wp_enqueue_script('subnav', '/wp-content/themes/olresponsive/js/subnav.js', array('jquery'), null, true);
   }
   if (is_single() || is_home()) {
@@ -41,6 +41,9 @@
   }
   if (is_single()) {
   wp_enqueue_script('lecture', '/wp-content/themes/olresponsive/js/lecture.js', array('jquery'), null, true);  }
+  if (is_page('team')) {
+  wp_enqueue_script('quicksand', '/wp-content/themes/olresponsive/js/jquery.quicksand.js', array('jquery'), null, true);
+  wp_enqueue_script('team', '/wp-content/themes/olresponsive/js/team.js', array('jquery','quicksand'), null, true);  }
   add_action('wp_enqueue_scripts', 'call_scripts');
   ?>
 <?php wp_head(); ?>
@@ -72,6 +75,7 @@
             </li>
           </ul>
           <!-- <li><a href="/about-us">About Us</a></li> -->
+          <li><a href="/team">The Team</a></li>
           <li><a href="/press">Press</a></li>
           <li><a href="/contact-us">Contact Us</a></li>
         </ul>

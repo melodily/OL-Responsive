@@ -20,7 +20,7 @@ Github site: http://github.com/razorjack/quicksand
     $.fn.quicksand = function (collection, customOptions) {     
         var options = {
             duration: 750,
-            easing: 'swing',
+            easing: 'easeInOutQuad',
             attribute: 'data-id', // attribute to recognize same items within source and dest
             adjustHeight: 'auto', // 'dynamic' animates height during shuffling (slow), 'auto' adjusts it before or after the animation, false leaves height constant
             useScaling: false, // disable it if you're not using scaling effect or want to improve performance

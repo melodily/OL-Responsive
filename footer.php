@@ -15,7 +15,7 @@
       	<ul class="nav nav-list">
                   <li class="nav-header">Information</li>
       		<li class="hidden"><a href="/about-us">About <span class="openlectures"><b>open</b>lectures</span></a></li>
-      		<li><a href="/team">The Team</a></li>
+      		<li class="hidden"><a href="/team">The Team</a></li>
       		<li class="hidden">Opportunities</li>
       		<li><a href="/press">Press Center</a></li>
       		<li><a href="/terms">Terms</a></li>

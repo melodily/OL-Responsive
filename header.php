@@ -17,7 +17,7 @@
   <!-- CSS
   ================================================== -->
   <link rel="stylesheet" href="/wp-content/themes/olresponsive/timeline.min.css">
-  <link rel="stylesheet" href="/wp-content/themes/olresponsive/bootstrap.css">
+  <link rel="stylesheet" href="/wp-content/themes/olresponsive/style.css">
 
   <!--Scripts
   ================================================== -->
@@ -42,7 +42,8 @@
   if (is_single()) {
   wp_enqueue_script('lecture', '/wp-content/themes/olresponsive/js/lecture.js', array('jquery'), null, true);  }
   if (is_page('team')) {
-  wp_enqueue_script('quicksand', '/wp-content/themes/olresponsive/js/jquery.quicksand.js', array('jquery'), null, true);
+  wp_enqueue_script('easing', '/wp-content/themes/olresponsive/js/jquery.easing.1.3.js', array('jquery'), null, true);
+  wp_enqueue_script('quicksand', '/wp-content/themes/olresponsive/js/jquery.quicksand.js', array('jquery','easing'), null, true);
   wp_enqueue_script('team', '/wp-content/themes/olresponsive/js/team.js', array('jquery','quicksand'), null, true);  }
   add_action('wp_enqueue_scripts', 'call_scripts');
   ?>
@@ -75,7 +76,7 @@
             </li>
           </ul>
           <!-- <li><a href="/about-us">About Us</a></li> -->
-          <li><a href="/team">The Team</a></li>
+          <!-- <li><a href="/team">The Team</a></li> -->
           <li><a href="/press">Press</a></li>
           <li><a href="/contact-us">Contact Us</a></li>
         </ul>

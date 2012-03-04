@@ -69,13 +69,6 @@ code {
 a.thumbnail:hover {
   border-color: #33cccc !important;
 }
-.alert {
-  background-color: #33cccc !important;
-  border: 1px solid #30c0a8 !important;
-}
-.alert, .alert-heading {
-  color: #404040 !important;
-}
 .progress .bar {
   background-color: #33CCCC !important;
   background-image: -moz-linear-gradient(top, #33CCCC, #33CCCC) !important;
@@ -86,6 +79,25 @@ a.thumbnail:hover {
   background-image: linear-gradient(top, #33CCCC, #33CCCC) !important;
   background-repeat: repeat-x !important;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33CCCC', endColorstr='#33CCCC', GradientType=0);
+}
+.errata {
+  height:80px;
+  overflow-y:scroll;
+  margin-bottom:0px !important;
+  padding-top:5px !important;
+}
+.video {
+  position:relative;
+  height:0;
+}
+.video>embed, .video>object, .video>div {
+  position:absolute !important;
+}
+.cbar-none {
+  padding-bottom:56.25%;
+}
+.cbar-bottom {
+  padding-bottom:62%;
 }
 /* ======================== */
 

@@ -24,7 +24,7 @@ function populate_posts($form){
         if($field['type'] != 'select' || strpos($field['cssClass'], 'populate-posts') === false)
             continue;
 
-        $posts = get_posts('numberposts=-1&post_status=publish');
+        $posts = get_posts('numberposts=-1&post_status=publish&cat=-200');
 
         $choices = array(array('text' => 'Type to search', 'value' => ' '));
         

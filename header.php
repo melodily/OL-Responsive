@@ -32,19 +32,19 @@
   if (is_category() || is_page('team')) {
   wp_enqueue_script('subnav', '/wp-content/themes/olresponsive/js/subnav.js', array('jquery'), null, true);
   }
-  if (is_single() || is_home()) {
-  wp_enqueue_script('jwplayer', '/wp-content/themes/olresponsive/jwplayer/jwplayer.js', array('jquery'), null, false);  }
+  if (is_single() || is_home() || is_page('standards')) { 
+  wp_enqueue_script('jwplayer', '/wp-content/themes/olresponsive/jwplayer/jwplayer.js', array('jquery'), null, false); }
   if (is_page('press')) {
   wp_enqueue_script('timeline', '/wp-content/themes/olresponsive/js/timeline.js', array('jquery'), null, true);  }
   if (is_page('about-us')) {
   wp_enqueue_script('extremes', '/wp-content/themes/olresponsive/js/extremes.js', array('jquery'), null, true);  }
-  }
   if (is_single()) {
   wp_enqueue_script('lecture', '/wp-content/themes/olresponsive/js/lecture.js', array('jquery'), null, true);  }
   if (is_page('team')) {
   wp_enqueue_script('easing', '/wp-content/themes/olresponsive/js/jquery.easing.1.3.js', array('jquery'), null, true);
   wp_enqueue_script('quicksand', '/wp-content/themes/olresponsive/js/jquery.quicksand.js', array('jquery','easing'), null, true);
   wp_enqueue_script('team', '/wp-content/themes/olresponsive/js/team.js', array('jquery','quicksand'), null, true);  }
+  }
   add_action('wp_enqueue_scripts', 'call_scripts');
   ?>
 <?php wp_head(); ?>

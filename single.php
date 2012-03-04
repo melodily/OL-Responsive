@@ -4,9 +4,20 @@
         <div class="page-header">
         <h1><?php the_title(); ?></h1>
         </div><!--pageheader-->
+        <?php 
+        $status=get_post_meta($post->ID, 'pending_refilm', true);
+        if ($status) {
+          echo '<div class="alert alert-error">';
+          echo '<a class="close" data-dismiss="alert">×</a>';
+          echo 'This lecture has been scheduled for a refilm because of community feedback.';
+          echo '</div>';
+        }
+        ?>
         <div class="row">
         <div class="spanvideo">
+          <div class="video cbar-bottom">
           <video src="<?php echo get_post_meta($post->ID, 'videourl', true); ?>" id="container" poster="/wp-content/uploads/Ending-Wrapper.png"/></video>
+        </div>
         </div><!--10col-->
         <div class="span4">
         <?php 
@@ -54,7 +65,7 @@
         if (get_the_content()) {
           echo '<hr>';
           echo '<p class="lead">Errata</p>';
-          echo '<div class="well">';
+          echo '<div class="well errata">';
           the_content();
           echo '</div><!--well-->';
         }

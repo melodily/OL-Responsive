@@ -41,10 +41,10 @@
 	echo '<ul class="ourHolder thumbnails">';
 	foreach($authors as $author) {
 		$display_name = $author['data']->display_name;
-		$author_profile_url = get_author_posts_url($author['ID']);
+		// $author_profile_url = get_author_posts_url($author['ID']);
 		$designation = get_cimyFieldValue($author['ID'], 'DESIGNATION');
 		if ($designation=="Staff") {
-			$subject = ' Staff= "true" ';
+			$subject = ' Staff="true" ';
 		}		
 		$subjects = get_cimyFieldValue($author['ID'], 'SUBJECT');
 		$classification = explode(",",$subjects);
@@ -53,11 +53,11 @@
 				$foo = ' '.$classification[$i].'="true" ';
 				$subject .= $foo;
 			}
-		echo '<li class="item span2 aligncenter"'.$subject.'><span>';
+		echo '<li class="item span2 aligncenter"'.$subject.'>';
 		echo '<a href="'.$author_profile_url.'" class="thumbnail">';
-		userphoto($author['ID']);
+		echo '<img src="http://placehold.it/160x160">';
 		echo '<h3>'.$display_name.'</h3></a>';
-		echo '</span></li>';
+		echo '</li>';
 		$subject = "";
 	}
 	echo '</ul>';

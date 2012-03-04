@@ -1,65 +1,83 @@
 <?php get_header(); ?>
-<link rel="stylesheet" media="screen" href="<?php echo get_template_directory_uri(); ?>/page-addon.css" type="text/css">
+
+<div class="container">
+	<div class="row">
 
 <?php
 $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
-?>
 
-<div class="container">
-<div class="content">
-<div class="page-header">
-<div class="authorbutton">
-<h1><?php echo $curauth->display_name; ?></h1>
-</div><!--authorbutton-->
-</div><!--pageheader-->
-<div class="lecturepic" style="background:url('<?php echo bloginfo('url') ?>/wp-content/uploads/userphoto/<?php echo $curauth->ID; ?>.png') no-repeat right bottom;">
-	<div class="authorinfo">
-		<div class="authorbutton">
-		<button type="button" class="btn large" onClick="parent.location='mailto:<?php echo $curauth->user_email; ?>'">Email</button>
-		<?php
-		$str_teaser = get_user_meta($curauth->ID,'teaser', true);
-		if ($str_teaser) {
-			echo "";
+$designation_list = get_cimyFieldValue($curauth->ID, 'DESIGNATION');
+$designations = explode(",",$designation_list);
+$subject_list = get_cimyFieldValue($curauth->ID, 'SUBJECT');
+$subjects = explode(",",$subject_list);
+$gender = get_cimyFieldValue($curauth->ID, 'GENDER');
+$school = get_cimyFieldValue($curauth->ID, 'SCHOOL');
+$gradyear = get_cimyFieldValue($curauth->ID, 'GRAD');
+$university = get_cimyFieldValue($curauth->ID, 'UNIVERSITY');
+$major = get_cimyFieldValue($curauth->ID, 'MAJOR');
+$video = get_cimyFieldValue($curauth->ID, 'TEASER');
+$cv = get_cimyFieldValue($curauth->ID, 'CV');
+
+if ($gender=="Male") {
+	$ns=2;
+}
+else {
+	$ns=0;
+}
+
+if (count($designations)==1) {
+	if ($designations[0]=='Lecturer') {
+		$primary_designation = 'Lecturer';
+	}
+	else {
+		$primary_designation = 'Staff';
+	}
+}
+else {
+	$primary_designation = 'Staff';
+	$secondary_designation = 'Lecturer';
+}
+
+echo '<div class="span3">';
+		userphoto($curauth->ID);
+	    echo '<ul class="nav nav-list">';
+		    echo '<li><a href="mailto:'.$email.'">Email</a></li>';
+	    if ($video) {
+	    	echo '<li><a href="#">Watch Teaser Video</a></li>';
 		}
-		?>
-		</div><!--authorsbutton-->
-		<h5><ul>
-			<li>&nbsp</li>
-			<?php
-			$str_designation = get_user_meta($curauth->ID, 'designation', true);
-			$str_subject = get_user_meta($curauth->ID, 'subject', true);
-			$str_jc = get_user_meta($curauth->ID, 'jc', true);
-			$str_gradyear = get_user_meta($curauth->ID, 'grad-year', true);
-			$str_uni = get_user_meta($curauth->ID, 'university', true);
-			$str_major = get_user_meta($curauth->ID, 'major', true);
-			if ($str_designation) {
-				echo "<li><b>".$str_designation."</b></li>";
-			}
-			if ($str_subject) {	
-				echo "<li>Lecturing <b>".$str_subject."</b></li>";
-			}
-			if ($str_jc && $str_gradyear) {
-				echo "<li><b>".$str_jc."</b>, Class of <b>".$str_gradyear."</b></li>";
-			}
-			if ($str_uni && $str_major) {
-				echo "<li><b>".$str_uni."</b> studying <b>".$str_major."</b></li>";
-			}
-			?>
-		</ul></h5>
-	</div><!--authorinfo-->
-	<div class="lecturebox">
-		<ul>
-		<?php query_posts($query_string.'&post_status=publish'); ?>
-		<?php if (have_posts()) {
-			echo "<h4>Lectures</h4>";
-		}
-		if ( have_posts() ) : while ( have_posts() ) : the_post();
-		;
-		?>
-		<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-		<?php endwhile; else: ?>	
-		<?php endif; ?>	
-		</ul>	
-	</div><!--lecturebox-->
-</div><!--lecturepic-->
-<?php get_footer('fluid'); ?>
+		if ($cv) {
+			echo '<li><a href="'.$cv.'">Curriculum Vitae</a></li>';
+		}  
+	    echo '</ul>';
+echo '</div><!--span3-->';
+echo '<div class="span9">';
+echo '<div class="page-header"><h1>'.$curauth->display_name.'</h1></div><!--page-header-->';
+echo '<div class="row">';
+echo '<div class="span6">';
+if ($school && $gradyear) {
+	echo '<h2>'.$school.'</h2>';
+	echo '<h3><small>Class of '.$gradyear.'</small></h3>';
+}
+if ($university && $major) {
+	echo '<h2>'.$university.'</h2>';
+	echo '<h3>'.$major.' <small>Class of '.($gradyear+$ns+5).'</small></h3>';
+}
+echo '</div><!--span3-->';
+?>
+<!-- 	
+<?php 
+query_posts($query_string.'&post_status=publish');
+if (have_posts()) {
+echo "<h4>Lectures</h4>";
+}
+if ( have_posts() ) : while ( have_posts() ) : the_post();
+?>
+<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+<?php endwhile; else:
+endif; 
+?>	 
+-->
+</div><!--span9-->
+</div><!--row-->
+</div><!--container-->
+<?php get_footer(); ?>

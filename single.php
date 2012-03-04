@@ -4,9 +4,20 @@
         <div class="page-header">
         <h1><?php the_title(); ?></h1>
         </div><!--pageheader-->
+        <?php 
+        $status=get_post_meta($post->ID, 'pending_refilm', true);
+        if ($status) {
+          echo '<div class="alert alert-error">';
+          echo '<a class="close" data-dismiss="alert">×</a>';
+          echo 'This lecture has been scheduled for a refilm because of community feedback.';
+          echo '</div>';
+        }
+        ?>
         <div class="row">
         <div class="spanvideo">
+          <div class="video cbar-bottom">
           <video src="<?php echo get_post_meta($post->ID, 'videourl', true); ?>" id="container" poster="/wp-content/uploads/Ending-Wrapper.png"/></video>
+        </div>
         </div><!--10col-->
         <div class="span4">
         <?php 
@@ -44,6 +55,21 @@
         }
         ?>
         </ul><!--navlist-->
+        <p class="lead">The Community</p>
+        <ul class="nav nav-list">
+          <li><a href="mailto:<?php the_author_email() ?>"><i class="icon-envelope"></i>Email the lecturer</a></li>
+          <li><a href="/errors"><i class="icon-exclamation-sign"></i>Report an error</a></li>
+          <li class="hidden"><a href="#"><span class="openlectures muted"><strong>open</strong>questions</span></a></li>
+        </ul><!--navlist-->
+        <?php
+        if (get_the_content()) {
+          echo '<hr>';
+          echo '<p class="lead">Errata</p>';
+          echo '<div class="well errata">';
+          the_content();
+          echo '</div><!--well-->';
+        }
+        ?>
         </div><!--span2-->
         </div><!--row-->
         <?php endif; ?>

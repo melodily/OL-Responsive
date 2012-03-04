@@ -1,4 +1,209 @@
+/* Scaffolding and Basic CSS */
+/* ======================== */
+
 body { padding-top:40px; }
+
+.alignright { text-align:right; }
+.alignleft { text-align:left; }
+.aligncenter { text-align:center; }
+.alignjustify { text-align:justify; }
+
+.rot { display:block; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
+
+p small {
+  font-size: 13px !important;
+  color: #404040 !important;
+  text-transform: uppercase !important;
+}
+
+.lead {
+  margin-bottom: 0px !important;
+  font-size: 16px !important;
+  font-weight: 200 !important;
+  line-height: 26.5px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal!important;
+}
+
+.muted {
+  opacity:0.4 !important;
+  filter:alpha(opacity=40) !important; /* For IE8 and earlier */
+}
+
+.picture>img {
+  border: 1px solid #33CCCC !important;
+  border-radius: 10px !important;
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  margin-right: 20px !important;
+}
+
+blockquote p.bio {
+  font-size:14px !important;
+}
+
+code {
+  color: #404040 !important;
+}
+.disabled {
+  color: #808080;
+}
+
+[class^="icon-"] {
+  width: 16px;
+  height: 16px;
+  background-image: url(../olresponsive/img/glyphicons-halflings.png) !important;
+  background-position: 16px 16px;
+}
+
+.icon-white {
+  background-image: url(../olresponsive/img/glyphicons-halflings-white.png) !important;
+}
+a.thumbnail:hover {
+  border-color: #33cccc !important;
+}
+.progress .bar {
+  background-color: #33CCCC !important;
+  background-image: -moz-linear-gradient(top, #33CCCC, #33CCCC) !important;
+  background-image: -ms-linear-gradient(top, #33CCCC, #33CCCC) !important;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#33CCCC), to(#33CCCC)) !important;
+  background-image: -webkit-linear-gradient(top, #33CCCC, #33CCCC) !important;
+  background-image: -o-linear-gradient(top, #33CCCC, #33CCCC) !important;
+  background-image: linear-gradient(top, #33CCCC, #33CCCC) !important;
+  background-repeat: repeat-x !important;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#33CCCC', endColorstr='#33CCCC', GradientType=0);
+}
+.errata {
+  height:80px;
+  overflow-y:scroll;
+  margin-bottom:0px !important;
+  padding-top:5px !important;
+}
+.video {
+  position:relative;
+  height:0;
+}
+.video>embed, .video>object, .video>div {
+  position:absolute !important;
+}
+.cbar-none {
+  padding-bottom:56.25%;
+}
+.cbar-bottom {
+  padding-bottom:62%;
+}
+/* ======================== */
+
+/* Column Widths */
+/* ======================== */
+
+.spanvideo {
+  width: 720px;
+}
+.spanpic {
+  width:100px;
+}
+.spanbio {
+  width: 620px;
+}
+/* ======================== */
+
+/* Navigation */
+/* ======================== */
+
+.navbar {
+  margin-bottom:0px;
+}
+
+.navbar-fixed-top {
+  z-index: 1230 !important;
+}
+
+@media (max-width: 979px) {
+  .navbar-fixed-top {
+    margin-bottom: 0px;
+  }
+}
+.nav-tabs .dropdown-toggle:hover .caret, .nav-pills .dropdown-toggle:hover .caret {
+  border-top-color: #248f8f !important;
+}
+.navbar-inner {
+  -webkit-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 0px 0 rgba(0, 0, 0, 0.1) !important;
+  -moz-box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 0px 0 rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.25), inset 0 0px 0 rgba(0, 0, 0, 0.1) !important;
+}
+.btn-navbar {
+  -webkit-box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(255, 255, 255, 0.075) !important;
+  -moz-box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(255, 255, 255, 0.075) !important;
+  box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(255, 255, 255, 0.075) !important;
+}
+
+/* ======================== */
+
+/* Forms and Tables */
+/* ======================== */
+
+body .gform_wrapper .gform_body .gform_fields .gfield input, 
+body .gform_wrapper .gform_body .gform_fields .gfield textarea {
+  font-family: "cmunbmr", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  /*width: 290px !important;*/
+  margin: 0 !important;
+  font-size: 100% !important;
+  vertical-align: middle !important;
+}
+
+input, 
+textarea,
+select,
+.uneditable-input {
+  width: 290px !important;
+  height: auto !important;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield input {
+  *overflow: visible;
+  line-height: normal;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+body .gform_wrapper .gform_footer input[type=submit] {
+  cursor: pointer;
+  -webkit-appearance: button;
+  width: auto;
+  height: auto;
+}
+
+button.btn::-moz-focus-inner, 
+input[type="submit"].btn::-moz-focus-inner, 
+body .gform_wrapper .gform_footer input[type=submit].button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+body .gform_wrapper .gform_footer input[type=submit].button {
+  *padding-top: 7px;
+  *padding-bottom: 7px;
+}
+
+.label {
+  text-transform: uppercase;
+}
+
+/* ======================== */
+
+/* Branding and OL Style */
+/* ======================== */
+
 @font-face { 
 	font-family: 'geosans_light'; 
 	src: url('/wp-content/themes/olresponsive/font/geosans_light.eot'); 
@@ -7,6 +212,7 @@ body { padding-top:40px; }
 	url('/wp-content/themes/olresponsive/font/geosans_light.ttf') format('truetype'), 
 	url('/wp-content/themes/olresponsive/font/geosans_light.svg#webfont') format('svg'); 
 }
+
 @font-face { 
 	font-family: 'cmunbmr'; 
 	src: url('/wp-content/themes/olresponsive/font/cmunbmr.eot'); 
@@ -15,13 +221,15 @@ body { padding-top:40px; }
 	url('/wp-content/themes/olresponsive/font/cmunbmr.ttf') format('truetype'), 
 	url('/wp-content/themes/olresponsive/font/cmunbmr.svg#webfont') format('svg'); 
 }
+
 .openlectures {	font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 .subheader { color: #33CCCC; }
-.alignright { text-align:right; }
-.alignleft { text-align:left; }
-.aligncenter { text-align:center; }
-.alignjustify { text-align:justify; }
-.rot { display:block; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
+
+/* ======================== */
+
+/* Twitter Announcement Bar */
+/* ======================== */
+
 .tweet {
   text-align: center;
   background-color:#33CCCC;
@@ -29,8 +237,14 @@ body { padding-top:40px; }
   border-radius: 0 0 20px 20px;
   -webkit-border-radius: 0 0 20px 20px;
   -moz-border-radius: 0 0 20px 20px;
+  margin-left: 630px;
 }
-/* Subnav */
+
+/* ======================== */
+
+/* Category Page Subnav */
+/* ======================== */
+
 .subnav {
   width: 100%;
   height: 36px;
@@ -120,8 +334,10 @@ body { padding-top:40px; }
             border-radius: 0;
   }
 }
+
+/* Media Queries for Subnav */
+
 @media (max-width: 768px) {
- /* Subnav */
   .subnav {
     position: static;
     top: auto;
@@ -157,3 +373,5 @@ body { padding-top:40px; }
   }
 
 }
+
+/* ======================== */

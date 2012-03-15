@@ -19,18 +19,22 @@
 <div class="span4 aligncenter">
 <img src="/wp-content/themes/olresponsive/img/math.png" class="muted">
 <h2 class="disabled">Mathematics</h2>
+<p class="disabled">Coming Soon</p>
 </div><!--4col-->
 <div class="span4 aligncenter">
 <img src="/wp-content/themes/olresponsive/img/physics.png" class="muted">
 <h2 class="disabled">Physics</h2>
+<p class="disabled">Coming Soon</p>
 </div><!--4col-->
 <div class="span4 aligncenter">
 <img src="/wp-content/themes/olresponsive/img/bio.png" class="muted">
 <h2 class="disabled">Biology</h2>
+<p class="disabled">Coming Soon</p>
 </div><!--4col-->
 <div class="span4 aligncenter">
 <img src="/wp-content/themes/olresponsive/img/geog.png" class="muted">
 <h2 class="disabled">Geography</h2>
+<p class="disabled">Coming Soon</p>
 </div><!--4col-->
 </div><!--row-->
 <br/>

@@ -1,58 +1,33 @@
 <?php get_header(); ?>
-	
-		<div id="container">	
-			<div class="container" id="content">
-			
-<?php if ( have_posts() ) : ?>
-				
-				<h1 class="page-title"><?php _e( 'Search Results for: ', 'shape' ); ?><span><?php the_search_query(); ?></span></h1>
-				
-<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
-				<div id="nav-above" class="navigation">
-					<div class="nav-previous"><?php next_posts_link(__( '<span class="meta-nav">&laquo;</span> Older posts', 'shape' )) ?></div>
-					<div class="nav-next"><?php previous_posts_link(__( 'Newer posts <span class="meta-nav">&raquo;</span>', 'shape' )) ?></div>
-				</div><!-- #nav-above -->
-<?php } ?>							
-
-<?php while ( have_posts() ) : the_post() ?>
-
-				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( __('Permalink to %s', 'shape'), the_title_attribute('echo=0') ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-
-<?php if ( $post->post_type == 'post' ) { ?>									
-					<div class="entry-meta">
-						<span class="meta-prep meta-prep-author"><?php _e('By ', 'shape'); ?></span>
-						<span class="author vcard"><a class="url fn n" href="<?php echo get_author_link( false, $authordata->ID, $authordata->user_nicename ); ?>" title="<?php printf( __( 'View all posts by %s', 'shape' ), $authordata->display_name ); ?>"><?php the_author(); ?></a></span>
-					</div><!-- .entry-meta -->
-<?php } ?>
-					
-					<div class="entry-summary">	
-<blockquote><p><?php the_excerpt( __( 'Continue reading <span class="meta-nav">&raquo;</span>', 'shape' )  ); ?></p></blockquote>
-<?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'shape' ) . '&after=</div>') ?>
-					</div><!-- .entry-summary -->	
-				</div><!-- #post-<?php the_ID(); ?> -->
-
-<?php endwhile; ?>
-
-<?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
-				<?php wp_pagenavi(); ?>
-<?php } ?>			
-
-<?php else : ?>
-
-				<div id="post-0" class="post no-results not-found">
-					<h2 class="entry-title"><?php _e( 'Nothing Found', 'shape' ) ?></h2>
-					<div class="entry-content">
-					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'shape' ); ?></p>
-					<form method="get" id="searchform" action="" >  
-					<input type="text" value="Search..." placeholder="Find a lecture" onfocus="if(this.value == this.defaultValue) this.value = ''" name="s" id="s" /> 						
-					</div><!-- .entry-content -->
-				</div>
-
-<?php endif; ?>			
-
-			</div><!-- #content -->		
-		</div><!-- #container -->
-		
-<?php get_sidebar(); ?>	
+<body>
+<div class="container">
+<br/>
+<div class="row">
+	<div class="span6">
+	<?php if ( have_posts() ) : ?>
+	<h1>A droid whirrs and beeps and...<br/><small>Was this what you were looking for?</small></h1>
+	<ul class="nav nav-pills nav-stacked">
+	<?php while ( have_posts() ) : the_post() ?>
+	<?php
+      $title = the_title('','',false);
+      $title_short = substr($title,5);
+	?>
+	<li><a href="<?php the_permalink(); ?>"><?php echo $title_short ?></a></li>
+	<?php endwhile; ?>
+	</ul>
+	</div><!--span6-->
+	<?php else : ?>
+		<h1>Bother! <small>These are clearly not the droids you are looking for.</small></h1>
+		<p>Can we convince you to jiggle your search terms around for a bit?</p>
+		<form method="get" action="<?php echo home_url( '/' ); ?>">
+          <input type="text" class="search-query" placeholder="Find a lecture" name="s" id="search" value="<?php the_search_query(); ?>">
+        </form>
+	</div><!--span6-->
+	<?php endif; ?>
+	<div class="span6 aligncenter">
+		<img src="/wp-content/themes/olresponsive/img/r2d2.png">
+	</div><!--span6-->
+</div><!--row-->
+</div><!--container-->
+</body>
 <?php get_footer(); ?>

@@ -14,29 +14,28 @@
       	<div class="span2">
       	<ul class="nav nav-list">
                   <li class="nav-header">Information</li>
-      		<li class="hidden"><a href="/about-us">About <span class="openlectures"><b>open</b>lectures</span></a></li>
-      		<li class="hidden"><a href="/team">The Team</a></li>
-      		<li class="hidden">Opportunities</li>
-      		<li><a href="/press">Press Center</a></li>
-      		<li><a href="/terms">Terms</a></li>
+      		<li><a href="/about-us"><i class="icon-user"></i>About Us</a></li>
+      		<li class="hidden"><i class="icon-asterisk"></i>Opportunities</li>
+      		<li><a href="/press"><i class="icon-camera"></i>Press Center</a></li>
+      		<li><a href="/terms"><i class="icon-list-alt"></i>Terms</a></li>
       	</ul>
       	</div><!--2col-->
       	<div class="span2">
       	<ul class="nav nav-list">
                   <li class="nav-header">Support</li>
-      		<li><a href="/feedback">Feedback</a></li>
-      		<li><a href="/errors">Report Errors</a></li>
-      		<li><a href="/contact-us">Contact Us</a></li>
-      		<li class="hidden">FAQ</li>
+      		<li><a href="/feedback"><i class="icon-comments"></i>Feedback</a></li>
+      		<li><a href="/errors"><i class="icon-exclamation-sign"></i>Report Errors</a></li>
+      		<li><a href="/contact-us"><i class="icon-external-link"></i>Contact Us</a></li>
+      		<li class="hidden"><i class="icon-info-sign"></i>FAQ</li>
       	</ul>
       	</div><!--2col-->
       	<div class="span2">
       	<ul class="nav nav-list">
                   <li class="nav-header">Community</li>
             	<li class="hidden"><span class="openlectures"><b>open</b>questions</span></li>
-            	<li><a href="https://twitter.com/openlecturessg">Twitter</a></li>
-            	<li><a href="https://www.facebook.com/OpenLectures">Facebook</a></li>
-            	<li class="hidden">Partnerships</li>
+            	<li><a href="https://twitter.com/openlecturessg"><i class="icon-twitter-sign"></i>Twitter</a></li>
+            	<li><a href="https://www.facebook.com/OpenLectures"><i class="icon-facebook-sign"></i>Facebook</a></li>
+            	<li class="hidden"><i class="icon-bar-chart"></i>Projects</li>
             	<li class="hidden">Corporate</li>
       	</ul>
       	</div><!--2col-->

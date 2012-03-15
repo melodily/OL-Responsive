@@ -14,7 +14,7 @@ add_action('admin_menu', 'remove_menus');
 // End remove menus
 
 // GravityForms "Display All Posts" Dropdown Add-in
-// update the '51' to the ID of your form
+// update the '200' to the ID of your form
 add_filter('gform_pre_render_3', 'populate_posts');
 
 function populate_posts($form){
@@ -96,18 +96,6 @@ add_action('wp_print_scripts', 'remove_l10n_js');
 	  add_theme_support( 'post-thumbnails' ); 
 	}
 // End declare theme support
-
-// Redirect to Post if Search returns only single result
-	add_action('template_redirect', 'single_result');
-	function single_result() {
-		if (is_search()) {
-			global $wp_query;
-			if ($wp_query->post_count == 1) {
-				wp_redirect( get_permalink( $wp_query->posts['0']->ID ) );
-			}
-		}
-	}
-// End post redirect
 
 // Remove junk from head
 	remove_action('wp_head', 'rsd_link');

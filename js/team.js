@@ -2,7 +2,7 @@ jQuery(document).ready(function($) {
 $(document).ready(function() {
 
   // get the action filter option item on page load
-  var $filterType = $('#filterOptions li.active a').attr('class');
+  var $filterType = $('.filterOptions li.active a').attr('class');
 	
   // get and assign the ourHolder element to the
 	// $holder varible for use later
@@ -13,9 +13,9 @@ $(document).ready(function() {
 
   // attempt to call Quicksand when a filter option
 	// item is clicked
-	$('#filterOptions li a').click(function(e) {
+	$('.filterOptions li a').click(function(e) {
 		// reset the active class on all the buttons
-		$('#filterOptions li').removeClass('active');
+		$('.filterOptions li').removeClass('active');
 		
 		// assign the class of the clicked filter option
 		// element to our $filterType variable
@@ -36,12 +36,12 @@ $(document).ready(function() {
 		
 		// call quicksand and assign transition parameters
 		$holder.quicksand($filteredData, {
-			duration: 800,
+			duration: 750,
 			easing: 'swing',
-		    attribute: "data-id",
+		    // attribute: "data-id",
 		    attribute: function(v) {
 		    // different src of img means: different object
-		    return $(v).find('img').attr('src');
+		    return $(v).find('a').attr('href');
     }
 		});
 		return false;

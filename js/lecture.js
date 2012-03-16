@@ -1,7 +1,9 @@
 jwplayer('container').setup({
   'flashplayer': '/wp-content/themes/olresponsive/jwplayer/player.swf',
-  'width': '100%',
-  'height': '100%',
+  // 'width': '720px',
+  // 'height': '445px',
+  'width':'100%',
+  'height':'100%',
   'plugins': {
     'hd-2': {'state': 'true'},
     // 'captions-2': {file:''},
@@ -12,6 +14,6 @@ jwplayer('container').setup({
     'file': '/wp-content/uploads/Logo-Player.png',
     'position': 'top-left',
   },
-  'skin': '/wp-content/themes/olresponsive/jwplayer/schoon.zip',
-  'screencolor': 'ffffff'
+  'skin': 'http://openlectures.sg/wp-content/themes/olresponsive/jwplayer/schoon/schoon.zip',
+  'screencolor': 'ffffff',
 });

@@ -1,8 +1,89 @@
-	<h2>Why Bother?</h2>
-	<div class="row remove-bottom">
-		<div class="span6">
-			<h4><span class="openlectures"><b>open</b>lectures</span> aims to build a platform for students to learn in a manner complementary to their schooling.<br/> We want to return the power of learning to individuals, instead of leaving it to a system that is not tailored to suit everyone’s needs.</h4>
-			<br/>
-			<p>Education should not be limited by wealth or the ability to afford it. It should be accessible to everyone who wants to learn. We believe that education should be based on learning, not studying; sharing, not teaching. We are motivated to give back by sharing our experience and expertise with students who want to better themselves by learning. Everyone here contributes based on that principle. Think of it as getting the best tutors you could possibly find, anytime, anywhere, and at zero cost.</p>
-		</div><!--6col-->
-	</div><!--row-->
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+<div class="row">
+	<div class="span4">
+<h2><span class="openlectures"><b>open</b>lectures</span>
+believes that education should not be limited by wealth or the ability to afford it.
+</h2>
+<hr>
+<p>It should, instead, be available to anyone who wants to learn.</p>
+<br/>
+<p>We are a group more than sixty staff and lecturers aiming to build a platform for students to learn in a manner complementary to their schooling. We want to return the power of learning to individuals, instead of leaving it to a system that is not tailored to suit everyone’s needs.</p>
+<br/>
+<p>We believe that education should be based on learning, not studying; sharing, not teaching. We are motivated to give back by sharing our experience and expertise with students who want to learn and better themselves. Everyone here contributes based on that principle.</p>
+<br/>
+<p><em>Think of it as getting the best tutors you could possibly find, anytime, anywhere, and at zero cost.</em></p>
+</div><!--span4-->
+<div class="span8">
+	<div class="subnav">
+	<ul class="nav nav-pills filterOptions">
+		<li class="active"><a class="all" href="#">All</a></li>
+		<li><a class="Economics" href="#">Economics</a></li>
+		<li><a class="Chemistry" href="#">Chemistry</a></li>
+		<li class="hidden"><a class="mathematics" href="#">Mathematics</a></li>
+		<li class="hidden"><a class="physics" href="#">Physics</a></li>
+		<li class="hidden"><a class="biology" href="#">Biology</a></li>
+		<li><a class="staff" href="#">Staff</a></li>
+	</ul><!--navpills-->
+	</div><!--subnav-->
+<?php
+	$display_admins = true;
+	$order_by = 'display_name'; // 'nicename', 'email', 'url', 'registered', 'display_name', or 'post_count'
+	$role = ''; // 'subscriber', 'contributor', 'editor', 'author' - leave blank for 'all'
+	$avatar_size = 160;
+	$hide_empty = true; // hides authors with zero posts
+	$exclude = '11';
+	 
+	if(!empty($display_admins)) {
+		$blogusers = get_users('exclude='.$exclude.'orderby='.$order_by.'&role='.$role);
+	} else {
+		$admins = get_users('role=administrator');
+		$exclude = array();
+		foreach($admins as $ad) {
+			$exclude[] = $ad->ID;	
+		}
+		$exclude = implode(',', $exclude);
+		$blogusers = get_users('exclude=&orderby='.$order_by.'&role='.$role);
+	}
+	$authors = array();
+	foreach ($blogusers as $bloguser) {
+		$user = get_userdata($bloguser->ID);
+		if(!empty($hide_empty)) {
+			$numposts = count_user_posts($user->ID);
+			if($numposts < 1) continue;
+		}
+		$authors[] = (array) $user;
+	}
+	 
+	echo '<ul class="ourHolder thumbnails">';
+	foreach($authors as $author) {
+		$display_name = $author['data']->display_name;
+		$author_profile_url = get_author_posts_url($author['ID']);
+		// $author_profile_url = '#';
+		$designations = get_cimyFieldValue($author['ID'], 'DESIGNATION');
+		$designation = explode (",",$designations);
+		if (in_array("Lecturer",$designation)) {
+		$subjects = get_cimyFieldValue($author['ID'], 'SUBJECT');
+		$classification = explode(",",$subjects);
+		$class_count = count($classification);
+			for ($i=0; $i<$class_count; $i++) {
+				$foo = ' '.$classification[$i].'="true" ';
+				$subject .= $foo;
+			}
+		}
+		if (in_array("Staff",$designation)) {
+			$subject .= ' Staff="true" ';
+		}
+		echo '<li class="item span2 aligncenter"'.$subject.'>';
+		echo '<a href="'.$author_profile_url.'" class="thumbnail" >';
+		userphoto($author['ID'],'','','','/wp-content/themes/olresponsive/img/nophoto.png');
+		echo '<h3>'.$display_name.'</h3></a>';
+		echo '</li>';
+		$subject = "";
+	}
+	echo '</ul>';
+?>
+</div><!--span8-->
+</div><!--row-->
+<div class="well">
+<p class="lead">This isn't all of us. More lecturers appear when new content becomes available. Check back, and check back often.</p> 
+</div><!--well-->
